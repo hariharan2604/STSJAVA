@@ -57,5 +57,6 @@ public class InfixToPostFix {
     }
     String post = new String(postfix);
     System.out.println(post);
+    sc.close();
   }
 }
