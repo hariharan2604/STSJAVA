@@ -1,5 +1,14 @@
+package MergeSort;
+
 public class Mergesort {
-    static void mergeSort(int arr[], int beg, int end) {
+    int beg, end, arr[];
+
+    public Mergesort(int arr[]) {
+        this.arr = arr;
+        this.beg = 0;
+        this.end = arr.length - 1;
+    }
+    void mergeSort(int arr[], int beg, int end) {
         if (beg < end) {
             int mid = (beg + end) / 2;
             mergeSort(arr, beg, mid);
@@ -8,7 +17,7 @@ public class Mergesort {
         }
     }
 
-    static void merge(int arr[], int beg, int mid, int end) {
+    void merge(int arr[], int beg, int mid, int end) {
         int n1 = mid - beg + 1;
         int n2 = end - mid;
         int i, j, k;
@@ -46,16 +55,14 @@ public class Mergesort {
 
     }
 
-    static void printArr(int arr[]){
+    public void printArr(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+" ");
+            System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
-    public static void main(String[] args) {
-        int arr[] = { 100, 2, 56, 22, 87 };
-        printArr(arr);
-        mergeSort(arr, 0, arr.length-1);
-        printArr(arr);
+    
+    public void sort() {
+        mergeSort(this.arr,this.beg,this.end);
     }
 }
